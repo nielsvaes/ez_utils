@@ -1,5 +1,4 @@
-
-from setuptools import setup
+from setuptools import setup, find_packages
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
@@ -7,7 +6,7 @@ with open("README.md", "r") as fh:
 setup(
     name='ez-utils',
     version='1.0.0',
-    packages=['tangle'],
+    packages=find_packages(),
     url='https://www.github.com/nielsvaes/ez_utils',
     long_description=long_description,
     long_description_content_type="text/markdown",
