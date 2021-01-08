@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name='ez-utils',
-    version='1.0.0',
+    version='1.1.0',
     packages=find_packages(),
     url='https://www.github.com/nielsvaes/ez_utils',
     long_description=long_description,
