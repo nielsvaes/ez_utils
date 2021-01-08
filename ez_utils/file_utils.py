@@ -19,6 +19,9 @@ def get_files_recursively(folders, filters=[]):
         for root, dirs, files in os.walk(folder):
             for file_name in files:
                 complete_file_path = os.path.join(root, file_name)
-                for file_filter in filters:
-                    if file_filter in complete_file_path:
-                        yield complete_file_path
+                if len(filters):
+                    for file_filter in filters:
+                        if file_filter in complete_file_path:
+                            yield complete_file_path
+                else:
+                    yield complete_file_path
