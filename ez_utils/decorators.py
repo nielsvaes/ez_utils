@@ -16,7 +16,7 @@ def timeit(method):
         result = method(*args, **kwargs)
         end = time.time()
 
-        logging.info('%s: %s  %2.2f ms' % (module_name, method.__name__, (end - start) * 1000))
+        logging.debug('%s: %s  %2.2f ms' % (module_name, method.__name__, (end - start) * 1000))
 
         return result
     return timed
