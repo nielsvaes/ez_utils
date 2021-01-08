@@ -3,6 +3,13 @@ import os
 import copy
 import base64
 
+class Singleton(type):
+    _instances = {}
+    def __call__(cls, *args, **kwargs):
+        if cls not in cls._instances:
+            cls._instances[cls] = super(Singleton, cls).__call__(*args, **kwargs)
+        return cls._instances[cls]
+
 def trace(message):
     """
     Runs a traceback. Sometimes handy for debugging purposes
@@ -50,19 +57,6 @@ def object_copy(instance, init_args=None):
         return new_obj
     else:
         return instance
-
-def try_number_parse(value):
-    try:
-        return int(value)
-    except ValueError as err:
-        pass
-
-    try:
-        return float(value)
-    except ValueError as err:
-        pass
-
-    return value
 
 def image_to_string(image_file_path):
     """
